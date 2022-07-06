@@ -71,7 +71,7 @@ vscode를 에디터로 활용하기
 터미널에
 
 ```shell
-git config --global core.editor "code --wait" 				
+git config --global core.editor "code --wait" 		
 ```
 
 입력하기
@@ -91,6 +91,21 @@ mac 에서 code. 가 먹히지 않는 경우
 3. 터미널 종료 후 재실행
 
 4. 새 터미널에서 code .  입력
+
+
+
+
+
+🔵
+
+로컬 저장소에 원격 저장소 URL 설정하기
+
+```shell
+# 예시
+git remote add origin https://github.com/yangu1455/TIL.git
+```
+
+repository 만들면 예시가 초기화면에 적혀있음.
 
 
 
