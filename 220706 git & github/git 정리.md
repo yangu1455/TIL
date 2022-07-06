@@ -98,8 +98,52 @@ mac 에서 code. 가 먹히지 않는 경우
 
 🔵
 
-실습화면 (순서만 참고)
+실습 (순서만 참고)
 
-![220706 실습화면](git 정리.assets/220706 실습화면.png)
+```shell
+Desktop/TIL - (master) > git status
+현재 브랜치 master
+커밋하도록 정하지 않은 변경 사항:
+  (무엇을 커밋할지 바꾸려면 "git add <파일>..."을 사용하십시오)
+  (use "git restore <file>..." to discard changes in working directory)
+        수정함:        .DS_Store
 
-![image-20220706170043642](git 정리.assets/image-20220706170043642.png)
+커밋할 변경 사항을 추가하지 않았습니다 ("git add" 및/또는 "git commit -a"를
+사용하십시오)
+Desktop/TIL - (master) > git add .
+Desktop/TIL - (master) > git commit -m 'TIL_0'
+[master 5933014] TIL_0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+Desktop/TIL - (master) > git status
+현재 브랜치 master
+커밋할 사항 없음, 작업 폴더 깨끗함
+Desktop/TIL - (master) > git log
+commit 5933014c5bebc4bfe8debfbccbbf780a09585ebd (HEAD -> master)
+Author: yangu1455 <kunja266@hanmail.net>
+Date:   Wed Jul 6 13:35:33 2022 +0900
+
+    TIL_0
+
+commit aaa72462f4a5ed01108e6cdb35b25d0602445393
+Author: SENGA0401 <kunja266@hanmail.net>
+Date:   Tue Jul 5 16:30:21 2022 +0900
+
+    마크다운 정리
+Desktop/TIL - (master) > git remote add origin https://github.com/yangu1455/TIL.git
+Desktop/TIL - (master) > git push origin master
+오브젝트 나열하는 중: 9, 완료.
+오브젝트 개수 세는 중: 100% (9/9), 완료.
+Delta compression using up to 10 threads
+오브젝트 압축하는 중: 100% (8/8), 완료.
+오브젝트 쓰는 중: 100% (9/9), 252.13 KiB | 31.52 MiB/s, 완료.
+Total 9 (delta 1), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (1/1), done.
+To https://github.com/yangu1455/TIL.git
+ * [new branch]      master -> master
+Desktop/TIL - (master) > git config --global core.editor "code --wait"
+Desktop/TIL - (master) > git push origin master
+Everything up-to-date
+```
+
+
+
