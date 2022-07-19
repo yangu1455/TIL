@@ -8,3 +8,31 @@ for n in range(number+1) :
     number = number // 10
 
 print(hap)
+
+
+# 강사님 코드 1
+
+
+number = 123
+result = 0
+
+while number:
+    result += number % 10
+    number //= 10
+
+print(result)
+
+
+# 강사님 코드 2
+
+number = 123
+result = 0
+
+while number:
+    # divmod(x, y)는 x를 y로 나누고, 
+    # 결과를 tuple로 반환 
+    # (몫, 나머지)
+    number, remainder = divmod(number,10)
+    result += remainder
+
+print(result)
