@@ -10,3 +10,4 @@
 ### ✔️ [220816 SQL 1일차 실습](https://github.com/yangu1455/TIL/tree/master/220816%20SQL%201%EC%9D%BC%EC%B0%A8%20%EC%8B%A4%EC%8A%B5)
 ### ✔️ [220817 SQL 2일차 실습](https://github.com/yangu1455/TIL/tree/master/220817%20SQL%202%EC%9D%BC%EC%B0%A8%20%EC%8B%A4%EC%8A%B5)
 ### ✔️ [220818 SQL 3일차 실습](https://github.com/yangu1455/TIL/tree/master/220818%20SQL%203%EC%9D%BC%EC%B0%A8%20%EC%8B%A4%EC%8A%B5)
+### ✔️ [220819 SQL 4일차 실습](https://github.com/yangu1455/TIL/tree/master/220819%20SQL%204%EC%9D%BC%EC%B0%A8%20%EC%8B%A4%EC%8A%B5)
