@@ -1,0 +1,39 @@
+/* 아래에 CSS를 작성해주세요. */
+* {
+  box-sizing: border-box;
+}
+.main{
+  text-align: center;
+  margin-block-end: 2em;
+}
+.top{
+  margin-block-start : 0.3em;
+  margin-block-end: 0.3em;
+}
+.cards{
+  width: 900px;
+}
+.card {
+  width: 300px;
+  height: 40rem;
+  margin-left: 15px;
+  margin-right: 15px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+.card-image {
+  width: 100%;
+  border-radius: 1rem;
+}
+.box{
+  margin-top: 7px;
+  margin-left: 7px;
+  /* font-size: ; */
+}
+.contents{
+  margin-top: 10px;
+}
+.contents-color{
+  color : gray;
+  font-size: 11px;
+}
