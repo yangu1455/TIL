@@ -80,4 +80,5 @@ align-items는 컨테이너 안에서 어떻게 모든 요소들이 정렬하는
 
 〰️
 
+* 🐸 Flex floggy 완료 스크린샷 🐸
 ![FROGGY 완료](/220831%20WEB%203%EC%9D%BC%EC%B0%A8/FLEXBOX%20FROGGY.png)
