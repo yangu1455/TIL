@@ -1,0 +1,124 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap');
+
+body {
+  font-family: 'Noto Sans KR', sans-serif;
+  min-width: 1280px;
+  color: #333333;
+  height: 1500px;
+}
+
+.nav{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  width: 1280px;
+  height: 50px;
+  /* margin:0 30px; */
+  /* border-top: 1px solid black; */
+  background-color: white;
+  
+}
+
+.nav-main{
+  padding-left: 30px;
+}
+
+.nav-list{
+  list-style: none;
+  display: flex;
+  padding-right: 30px;
+}
+
+.nav-list-items{
+  padding: 0 0 0 10px;
+  font-weight: bold;
+}
+
+.nav-link{
+  text-decoration: none;
+}
+
+.nav-link:hover {
+  color: white;
+  background-color: #9696FF;
+}
+
+.main{
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  width: 1280px;
+  margin: 0;
+}
+
+/* 이게 모래 사진이랑 문구랑 합친것 */
+.section{
+  display: flex;
+  background-color: white;
+  justify-content: center;
+  margin-top: 40px;
+}
+
+.about{
+  text-align: center;
+  line-height: 200%;
+  /* padding: 0 30px; */
+  width: 500px;
+  font-size: 14px;
+}
+
+/* 모래그림 옆에 글 제목 */
+.about-name{
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  font-size: 25px;
+  font-weight: bold;
+}
+
+.main-img{
+  height: 700px;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+/* 모래그림 */
+.img0{
+  border-radius: 1rem;
+  width: 40%;
+}
+
+.More{
+  display: flex;
+  flex-direction: column;
+  margin: 40px 0;
+}
+
+/* 동그라미 전체 */
+.buttons{
+  display: flex;
+  justify-content: center;
+  height: 130px;
+}
+
+.buttons-item{
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  flex-direction: column;
+  padding: 0 50px;
+}
+
+/* 아래 동그라미 하나하나 */
+.button{
+  height: 64px;
+}
+
+.upbutton{
+  height: 5%;
+  position: fixed;
+  bottom: 0;
+  right: 0;
+}
