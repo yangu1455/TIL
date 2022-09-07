@@ -26,3 +26,5 @@
 ### ✔️ [220901 WEB 4일차](https://github.com/yangu1455/TIL/tree/master/220901%20WEB%204%EC%9D%BC%EC%B0%A8)
 ### ✔️ [220902 WEB 5일차](https://github.com/yangu1455/TIL/tree/master/220902%20WEB%205%EC%9D%BC%EC%B0%A8)
 ### ✔️ [220905 WEB 6일차](https://github.com/yangu1455/TIL/tree/master/220905%20WEB%206%EC%9D%BC%EC%B0%A8)
+### ✔️ [220906 WEB 7일차](https://github.com/yangu1455/TIL/tree/master/220906%20WEB%207%EC%9D%BC%EC%B0%A8)
+### ✔️ [220907 WEB 8일차](https://github.com/yangu1455/TIL/tree/master/220907%20WEB%208%EC%9D%BC%EC%B0%A8)
