@@ -34,10 +34,13 @@
 ### 🔸 브라우저 API 
 > 웹 브라우저에 내장된 API로, 현재 컴퓨터 환경에 관한 데이터를 제공하거나 여러가지 유용하고 복잡한 일을 수행.
 
-* DOM (Document Object Model) API로 HTML 콘텐츠를 추가, 제거, 변경하고, 동적으로 페이지에 스타일을 추가하는 등 HTML/CSS를 조작할 수 있습니다. 페이지 위에 뜨는 팝업창이나, (위쪽의 간단한 예제처럼) 새로운 콘텐츠가 나타나는 것을 본 적이 있으면 DOM이 동작한 겁니다. JavaScript는 DOM (Document Object Model) API를 통해 HTML과 CSS를 동적으로 수정, 사용자 인터페이스를 업데이트하는 일에 가장 많이 쓰입니다. 참고로 웹 문서(페이지)의 코드는 보통 문서 상에 나타나는 순서 그대로 불러와 실행합니다. 수정하려는 HTML과 CSS 코드보다 JavaScript를 먼저 불러와 실행해버리면 오류가 발생할 수 있습니다. 아래의 스크립트 로딩 전략에서 이 문제의 해결법을 알아보겠습니다.
-* Geolocation API로 지리정보를 가져올 수 있습니다. Google 지도에서 여러분의 위치를 찾아 지도에 그릴 수 있는 이유가 바로 이 API입니다.
-* Canvas와 WebGL API로 애니메이션을 적용한 2D와 3D 그래픽을 만들 수 있습니다. 두 웹 기술을 사용해서 만들 수 있는 놀라운 결과를 엿보려면 Chrome Experiments와 webglsamples를 방문하세요.
-* HTMLMediaElement와 WebRTC를 포함하는 오디오와 비디오 API로는 멀티미디어를 사용한 흥미로운 일을 할 수 있습니다. 예를 들어 오디오나 비디오를 웹 페이지에서 바로 재생하거나, 여러분의 웹캠으로 비디오를 찍어 다른 사람의 화면에 보여줄 수 있습니다. (간단한 스냅샷 데모를 방문해서 감을 잡아보세요)
+* DOM (Document Object Model) API로 HTML 콘텐츠를 추가, 제거, 변경하고, 동적으로 페이지에 스타일을 추가하는 등 HTML/CSS를 조작할 수 있다. JavaScript는 DOM (Document Object Model) API를 통해 HTML과 CSS를 동적으로 수정, 사용자 인터페이스를 업데이트하는 일에 가장 많이 쓰인다. 참고로 웹 문서(페이지)의 코드는 보통 문서 상에 나타나는 순서 그대로 불러와 실행한다. 수정하려는 HTML과 CSS 코드보다 JavaScript를 먼저 불러와 실행해버리면 오류가 발생할 수 있다. 
+
+* Geolocation API로 지리정보를 가져올 수 있다.
+
+* Canvas와 WebGL API로 애니메이션을 적용한 2D와 3D 그래픽을 만들 수 있다. (참고 > Chrome Experiments, webglsamples)
+
+* HTMLMediaElement와 WebRTC를 포함하는 오디오와 비디오 API로는 멀티미디어를 사용한 흥미로운 일을 할 수 있다. 예를 들어 오디오나 비디오를 웹 페이지에서 바로 재생하거나, 여러분의 웹캠으로 비디오를 찍어 다른 사람의 화면에 보여줄 수 있다.
 
 〰️
 
