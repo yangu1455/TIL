@@ -37,4 +37,4 @@
 ### ✔️ [220916 JS 2일차](https://github.com/yangu1455/TIL/tree/master/220916%20JS%202%EC%9D%BC%EC%B0%A8)
 -----
 📚 개인공부
-### ✔️ [220917 개인공부](https://github.com/yangu1455/TIL/tree/master/220917%20%EA%B0%9C%EC%9D%B8%EA%B3%B5%EB%B6%80)
+### ✔️ [220917 TIL](https://github.com/yangu1455/TIL/tree/master/220917%20%EA%B0%9C%EC%9D%B8%EA%B3%B5%EB%B6%80)
