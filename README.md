@@ -35,7 +35,7 @@
 📚 JS
 ### ✔️ [220915 JS 1일차](https://github.com/yangu1455/TIL/tree/master/220915%20JS%201%EC%9D%BC%EC%B0%A8)
 ### ✔️ [220916 JS 2일차](https://github.com/yangu1455/TIL/tree/master/220916%20JS%202%EC%9D%BC%EC%B0%A8)
-### ✔️ [220921 JS 4일차(마지막날)](https://github.com/yangu1455/TIL/tree/master/220921%20JS%20%EB%A7%88%EC%A7%80%EB%A7%89%EB%82%A0)
+### ✔️ [220920 JS 4일차(마지막날)](https://github.com/yangu1455/TIL/tree/master/220921%20JS%20%EB%A7%88%EC%A7%80%EB%A7%89%EB%82%A0)
 -----
 📚 개인공부
 ### ✔️ [220917 TIL](https://github.com/yangu1455/TIL/tree/master/220917%20%EA%B0%9C%EC%9D%B8%EA%B3%B5%EB%B6%80)
