@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>로또 추첨기</title>
+  <style>
+    .btn{
+      height: 2rem;
+      margin-bottom: 10px;
+    }
+    .ball{
+      width: 8rem;
+      height: 8rem;
+      background-color: darkorange;
+      border-radius: 50%;
+      text-align: center;
+      line-height: 8rem;
+      font-size: xx-large;
+      font-weight: bold;
+    }
+    .ball-container{
+      display: flex;
+    }
+  </style>
+</head>
+<body>
+  <!-- - 버튼을 눌렀을 때 번호 6개를 추천하는 코드를 작성합니다.
+  - 라이브 수업에서 진행된 코드를 참고하여 완성 시키세요. -->
+  <h1>로또 번호 추첨기</h1>
+  <button class="btn" id="btn">추첨시작!</button>
+  <div id="result">
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.21/lodash.min.js"></script>
+  <script>
+    const button = document.querySelector('#btn')
+    button.addEventListener('click', function(){
+      // console.log('번호 추첨')
+      // div를 만들어서 ballContainer 라는 변수에 저장
+      const ballContainer = document.createElement('div')
+      // div에 ball-container라는 class를 입힌다.
+      ballContainer.classList.add('ball-container')
+
+      // 6개 랜덤번호 받기
+      const numbers = _.sampleSize(_.range(1, 46), 6)
+      // console.log(numbers) - 이건 그 번호 기록하는것
+
+      // for문으로 6개 번호 리스트에서 번호 하나씩 빼와서 공에 넣고 공 div를 하나씩 더해준다.
+      // 리스트 길이만큼 반복하니까 6개 됨
+      for (let index in numbers){
+        const ball = document.createElement('div')
+        ball.classList.add('ball')
+
+        ball.innerText = numbers[index]
+        // ball.classList.add('ball')
+        // ball.innerText = numbers[1]
+        // ball.style.backgroundColor = 'blue'
+
+        // 컨테이너에 붙인다.
+        ballContainer.appendChild(ball)
+
+        // 컨테이너를 결과 영역에 붙인다.
+        const result = document.querySelector('#result') 
+      }
+      result.appendChild(ballContainer)
+    })
+
+    // 로또 공은 5가지 색깔로 되어 있습니다.
+    // 1번부터 10번까지는 노란색입니다.
+    // 11번 부터 20번까지는 파란색입니다.
+    // 21번부터 30번까지는 빨간색입니다.
+    // 31번부터 40번까지는 검은색입니다.
+    // 41번부터 45번까지는 초록색입니다.
+  </script>
+
+</body>
+</html>
