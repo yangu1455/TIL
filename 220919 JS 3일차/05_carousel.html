@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .carousel-items {
+      position: relative;
+      display: flex;
+      width: 7rem;
+      height: 7rem;
+      overflow: hidden;
+    }
+    .carousel-item {
+      position: absolute;
+      top: 0;
+      width: 7rem;
+      height: 7rem;
+      background-color: rgb(62, 111, 255);
+      display: none;
+    }
+    .active {
+      display: block;
+      animation: active 1.5s;
+    }
+    @keyframes active {
+      0% {
+        transform: translateX(100%);
+      }
+      100% {
+        transform: translateX(0);
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="carousel-items">
+      <div class="carousel-item active">첫번째</div>
+      <div class="carousel-item">두번째</div>
+      <div class="carousel-item">세번째</div>
+      <div class="carousel-item">네번째</div>
+    </div>
+  </div>
+    <!-- 이전(previous) 버튼 만들기 -->
+    <button id="pre-Btn">이전</button>
+    <button id="next-Btn">다음</button>
+
+  <script>
+    // 이전 버튼을 누르면
+    const preBtn = document.querySelector('#pre-Btn')
+    preBtn.addEventListener('click', function() {
+      // 지금 active인 것은 어떻게 알죠?
+      const currentElement = document.querySelector('.active')
+      // 전체 item 중에....... 이 Element의 인덱스?
+      const items = document.querySelectorAll('.carousel-item')
+      const idx = [...items].indexOf(currentElement)
+      console.log(currentElement, items, idx)
+      currentElement.classList.toggle('active')
+      items[(items.length+idx-1)%items.length].classList.toggle('active')
+    })
+
+    // 다음 버튼을 누르면
+    const nextBtn = document.querySelector('#next-Btn')
+    nextBtn.addEventListener('click', function() {
+      const currentElement = document.querySelector('.active')
+      const items = document.querySelectorAll('.carousel-item')
+      const idx = [...items].indexOf(currentElement)
+      console.log(currentElement, items, idx)
+      currentElement.classList.toggle('active')
+      items[(idx+1)%items.length].classList.toggle('active')
+    })
+
+    // 자동으로 넘어가는 ~
+    // setInterval(function() {
+    //     const nextBtn = document.querySelector('#next-Btn')
+    //     nextBtn.click()
+    //   }, 15000)
+  </script>
+</body>
+</html>

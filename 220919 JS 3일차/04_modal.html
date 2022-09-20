@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .modal-overlay{
+      position: fixed;
+      top: 10;
+      left: 30;
+      background-color: rgb(234, 116, 255);
+      width: 500px;
+      height: 100px;
+      color: rgb(255, 255, 255);
+      justify-content: center;
+      align-items: center;
+      /* 평상시에는 안보이는 상태에서 시작 */
+      display: none;
+    }
+    .active{
+      display: flex;
+    }
+  </style>
+</head>
+<body>
+  <!-- 모달 직접 만들어보기 -->
+  <button id="open-btn">모달아 나와라!</button>
+  <div id="modal-body" class="modal-overlay" style="flex-direction: column;">
+    <p>나는 모달입니다!!!</p>
+    <button id="close-btn">닫기</button>
+  </div>
+
+  <script>
+    // modalToggle은 말이야
+    const modalToggle = function(){
+      document.querySelector('#modal-body').classList.toggle('active')
+    }
+
+    // 모달 열기 버튼 누르면
+    const modalOpenBtn = document.querySelector('#open-btn')
+    modalOpenBtn.addEventListener('click', modalToggle)
+
+    // 모달 닫기 버튼 누르면
+    const modalCloseBtn = document.querySelector('#close-btn')
+    modalCloseBtn.addEventListener('click', modalToggle)
+
+    // // 모달 오버레이를 클릭하면
+    // const modalOverlay = document.querySelector('#modal-body')
+    // modalOverlay.addEventListener('click', modalToggle)
+  </script>
+
+</body>
+</html>
