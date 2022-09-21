@@ -119,14 +119,16 @@ python manage.py runserver
 
 ![서버 활성화하기](image/09.png)
 
-혹시 안되는 경우에는
-
-[[트러블슈팅]"python manage.py runserver" 개발서버 start(시작)에러 - 작성자 WorldSeeker](https://atotw.tistory.com/313)
-
-참고하기!
+혹시 안되는 경우에는 맨아래 참고사이트로!
 
 〰️
 
 ## 10. 인터넷 빈창을 띄우고 주소창에 `localhost:8000`를 입력해보면..!
 ![성공_00](image/10.png)
 ![성공_01](image/10-1.png)
+
+
+-----
+### 참고 사이트
+1. [mdn Django 개발 환경 세팅하기](https://developer.mozilla.org/ko/docs/Learn/Server-side/Django/development_environment)
+2. [[트러블슈팅]"python manage.py runserver" 개발서버 start(시작)에러 - 작성자 WorldSeeker](https://atotw.tistory.com/313)
