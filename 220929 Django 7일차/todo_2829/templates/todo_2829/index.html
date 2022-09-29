@@ -1,0 +1,62 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1 class="my-3">index.html</h1>
+
+<!-- 사용자에게 정보를 입력받을 때 -->
+<!-- form 태그를 사용해야한다. -->
+<!-- action : 어떤 url을 요청할지 -->
+<form class="my-2" action="{% url 'todo_2829:create' %}">
+  <div class="input-group mb-3">
+    <span class="input-group-text">할 일</span>
+    <input type="text" name="content" class="form-control" maxlength="80">
+  </div>
+
+  <div class="input-group mb-3">
+    <label class="input-group-text" for="inputGroupSelect01">우선순위</label>
+    <select class="form-select" name="priority">
+      <option value="1">1</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+      <option value="4">4</option>
+      <option value="5">5</option>
+    </select>
+  </div>
+
+  <div class="input-group mb-3">
+    <span class="input-group-text">마감 기한</span>
+    <input type="date" name="deadline" class="form-control">
+  </div>
+
+  <input class="btn btn-warning w-100" type="submit" value="할 일 추가">
+</form>
+
+<table class="table my-5">
+  <thead>
+    <tr>
+      <th>우선 순위</th>
+      <th>할 일 내용</th>
+      <th>생성 날짜</th>
+      <th>마감 기한</th>
+      <th>진행 상태</th>
+      <th>상태 변경</th>
+      <th>삭제</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    {% for todo in todos %}
+    <tr>
+      <td>{{ todo.priority }}</td>
+      <td>{{ todo.content }}</td>
+      <td>{{ todo.created_at }}</td>
+      <td>{{ todo.deadline }}</td>
+      <td>{{ todo.completed }}</td>
+      <td><input class="btn btn-primary w-25" value="변경" id="state-btn" onclick="location.href="></td>
+      <td><input class="btn btn-danger w-25" value="삭제" id="del-btn"></td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+
+{% endblock content %}
