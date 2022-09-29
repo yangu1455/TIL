@@ -37,13 +37,18 @@ def update(request, pk_):
     # update할 특정 데이터를 불러온다. -> pk_를 사용해서
     todo = Todo.objects.get(pk=pk_)
 
-    completed_ = request.GET.get("completed")
-
-    # 데이터를 수정
-    todo.completed = completed_
+    # True -> False
+    # False -> True
+    todo.completed = not todo.completed
 
     # 데이터 수정한 것을 반영
     todo.save()
 
-    # 메인 페이지를 불러옴 todo.pk 대신 pk_도 상관없음
-    return redirect("todo_2829:index", todo.pk)
+    return redirect("todo_2829:index")
+
+
+def delete(request, todo_pk):
+    todo = Todo.objects.get(pk=todo_pk)
+    todo.delete()
+
+    return redirect("todo_2829:index")

@@ -47,13 +47,25 @@
   <tbody>
     {% for todo in todos %}
     <tr>
+      {% if todo.completed %}
+      <td class="text-decoration-line-through">{{ todo.priority }}</td>
+      <td class="text-decoration-line-through">{{ todo.content }}</td>
+      <td class="text-decoration-line-through">{{ todo.created_at }}</td>
+      <td class="text-decoration-line-through">{{ todo.deadline }}</td>
+      <td class="text-decoration-line-through">{{ todo.completed }}</td>
+      {% else %}
       <td>{{ todo.priority }}</td>
       <td>{{ todo.content }}</td>
       <td>{{ todo.created_at }}</td>
       <td>{{ todo.deadline }}</td>
       <td>{{ todo.completed }}</td>
-      <td><input class="btn btn-primary w-25" value="변경" id="state-btn" onclick="location.href="></td>
-      <td><input class="btn btn-danger w-25" value="삭제" id="del-btn"></td>
+      {% endif %}
+      <td>
+        <a class="btn btn-primary" value="변경" id="state-btn" href="{% url 'todo_2829:update' todo.pk %}">변경</a>
+      </td>
+      <td>
+        <a class="btn btn-danger" value="삭제" id="del-btn" href="{% url 'todo_2829:delete' todo.pk %}">삭제</a>
+      </td>
     </tr>
     {% endfor %}
   </tbody>
