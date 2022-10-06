@@ -1,0 +1,15 @@
+from django.urls import path
+from . import views
+
+urlpatterns = [
+    # 영화 데이터 목록 조회
+    path("", views.index, name="index"),
+    # 영화 데이터 정보 조회
+    path("<int:pk>/", views.select, name="select"),
+    # 영화 데이터 생성
+    path("create/", views.create, name="create"),
+    # 영화 데이터 수정
+    path("<int:pk>/update/", views.update, name="update"),
+    # 영화 데이터 삭제
+    path("<int:pk>/delete/", views.delete, name="delete"),
+]
