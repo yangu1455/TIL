@@ -52,4 +52,6 @@ def detail(request, pk):
 
 
 def update(request, pk):
-    return render(request, "practice.update.html")
+    article_form = ArticleForm()
+    context = {"article_form": article_form}
+    return render(request, "practice/update.html", context)
