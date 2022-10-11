@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>게시판</title>
+</head>
+
+<body>
+  <h1>게시판</h1>
+  <hr>
+  {% for a in article %}
+  <h3><a href="{% url 'practice:detail' a.pk %}">{{ a.title }}</a></h3>
+  <h5>{{ a.created_at }} | {{ a.updated_at }}</h5>
+  <hr>
+  {% endfor %}
+  <a href="{% url 'practice:create' %}">새 글 쓰기</a>
+</body>
+
+</html>
