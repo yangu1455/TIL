@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 
@@ -6,13 +7,15 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>게시판</title>
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
 </head>
 
 <body>
   <h1>게시판</h1>
+  <img src="{% static 'images/d600400.png' %}" alt="">
   <hr>
   {% for a in article %}
-  <h3>제목 : {{ a.title }}</h3>
+  <h3><a href="{% url 'practice:detail' a.pk %}">{{ a.title }}</a></h3>
   <h5>{{ a.created_at }} | {{ a.updated_at }}</h5>
   <hr>
   {% endfor %}
