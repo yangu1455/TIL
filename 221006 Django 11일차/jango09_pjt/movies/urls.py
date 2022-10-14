@@ -1,11 +1,13 @@
 from django.urls import path
 from . import views
 
+app_name = 'movies'
+
 urlpatterns = [
     # 영화 데이터 목록 조회
     path("", views.index, name="index"),
     # 영화 데이터 정보 조회
-    path("<int:pk>/", views.select, name="select"),
+    path("<int:pk>/", views.detail, name="detail"),
     # 영화 데이터 생성
     path("create/", views.create, name="create"),
     # 영화 데이터 수정

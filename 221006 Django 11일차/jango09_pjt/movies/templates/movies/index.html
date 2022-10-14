@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% load django_bootstrap5 %}
+
+{% block body %}
+  <h1>index.html</h1>
+  <p>목록을 출력해서 게시판처럼 보여주기</p>
+  {% comment %} <form action="" method="POST">
+    {% csrf_token %}
+
+    {% bootstrap_form article_form %}
+    {% bootstrap_button button_type='submit' content='수정하기' %}
+  </form> {% endcomment %}
+
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">pk</th>
+        <th scope="col">영화 제목</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for movie in movies %}
+        <tr>
+          <th scope="row">{{ movie.pk }}</th>
+          <td><a href="{% url 'movies:detail' movie.pk %}">{{ movie.title }}</a></td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+{% endblock %}
