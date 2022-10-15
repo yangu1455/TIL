@@ -14,7 +14,7 @@
     
   {% comment %} {% bootstrap_button button_type = 'submit' content = 'OK' %} {% endcomment %}
   <div class='d-flex justify-content-end'>
-    <button class='btn btn-outline-success mx-1' type='submit'><a href="{% url '%}">수정</a></button>
-    <button class='btn btn-outline-danger mx-1' type='submit'>삭제</button>
+    <a class='btn btn-outline-success mx-1' href="{% url 'movies:update' movie.pk %}">수정</a>
+    <a class='btn btn-outline-danger mx-1' href="{% url 'movies:delete' movie.pk %}">삭제</a>
   </div>
 {% endblock %}
