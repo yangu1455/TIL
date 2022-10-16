@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load django_bootstrap5 %}
+
+{% block css %}
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+{% endblock %}
+
+{% block body %}
+  <h1>게시판</h1>
+  <img src="{% static 'images/d600400.png' %}" alt="">
+  <hr>
+  {% for a in article %}
+    <h3>
+      <a href="{% url 'practice:detail' a.pk %}">{{ a.title }}</a>
+    </h3>
+    <h5>{{ a.created_at }}
+      |
+      {{ a.updated_at }}</h5>
+    <hr>
+  {% endfor %}
+  <a href="{% url 'practice:create' %}">새 글 쓰기</a>
+  {% comment %} <button class='btn btn-primary'>이게 되나?</button> {% endcomment %}
+{% endblock %}
