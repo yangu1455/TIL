@@ -1,4 +1,5 @@
-
+from django.urls import path
+from . import views
 
 # app name 쓰는 이유?
 # 우리는 기본적으로 URL을 모두 변수화해서 쓰고 있음
@@ -8,5 +9,5 @@
 app_name = 'accounts'
 
 urlpatterns = [
-    
+    path('signup/', views.signup, name='signup')
 ]
