@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% load django_bootstrap5 %}
+
+{% block body %}
+
+  detail.html
+
+  <h1>{{ review.title }}</h1>
+  <h2>{{ review.movie_name }}</h2>
+  <p>{{ review.content }}</p>
+  <h4>{{ review.grade }}</h4>
+
+  <hr>
+  <hr>
+  {{ review.created_at }}
+  {{ review.updated_at }}
+
+  <a href="{% url 'reviews:update' review.pk %}">수정하기</a>
+{% endblock body %}
