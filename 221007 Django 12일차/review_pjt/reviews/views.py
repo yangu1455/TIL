@@ -43,8 +43,28 @@ def create(request):
 
 
 def update(request, pk):
-    pass
+    review = Review.objects.get(pk=pk)
+    if request.method == "POST":
+        # POST : input 값 가져와서 검증하고, DB에 저장
+        review_form = ReviewForm(request.POST, instance=review)
+        # 유효성 검사
+        if review_form.is_valid():
+            # 유효하면 세이브
+            review_form.save()
+            # 유효성 검사 통과하면 상세보기 페이지로
+            return redirect("reviews:detail", review.pk)
+
+    # 유효성검사 통과하지 않으면 => context부터해서 오류메시지 담긴 article_form을 랜더링
+    else:
+        # GET : Form을 제공
+        review_form = ReviewForm(instance=review)
+
+    context = {
+        "review_form": review_form,
+    }
+    return render(request, "reviews/update.html", context)
 
 
 def delete(request, pk):
-    pass
+    Review.objects.get(pk=pk).delete()
+    return redirect('reviews:index')

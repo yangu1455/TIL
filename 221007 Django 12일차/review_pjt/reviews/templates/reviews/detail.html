@@ -3,17 +3,22 @@
 
 {% block body %}
 
-  detail.html
+  <br>
+  <br>
 
   <h1>{{ review.title }}</h1>
   <h2>{{ review.movie_name }}</h2>
   <p>{{ review.content }}</p>
   <h4>{{ review.grade }}</h4>
 
-  <hr>
-  <hr>
+  <br>
+  <br>
   {{ review.created_at }}
   {{ review.updated_at }}
 
-  <a href="{% url 'reviews:update' review.pk %}">수정하기</a>
+  <br>
+  <br>
+
+  <a class='btn btn-success' href="{% url 'reviews:update' review.pk %}">수정</a>
+  <a class='btn btn-danger' href="{% url 'reviews:delete' review.pk %}">삭제</a>
 {% endblock body %}
