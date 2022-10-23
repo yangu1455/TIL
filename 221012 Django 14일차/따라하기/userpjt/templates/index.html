@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% load django_bootstrap5 %}
+
+{% comment %} 
+메인페이지
+- `GET` http://127.0.0.1:8000/
+- 회원가입 페이지 이동 버튼
+- 회원 목록 페이지 이동 버튼 {% endcomment %}
+
+{% block body %}
+  <h1>index가 잘 뜨나요? 정말로요?</h1>
+
+  <div class='d-flex flex-column'>
+    <a href="{% url 'accounts:signup' %}">
+      <button class='btn btn-primary my-1 w-100' type='submit'>회원 가입</button>
+      {% comment %} {% bootstrap_button button_type = 'submit' content = '회원가입' %} {% endcomment %}
+    </a>
+    <a href="{% url 'accounts:index' %}">
+      <button class='btn btn-primary my-1 w-100' type='submit'>회원 목록</button>
+      {% comment %} {% bootstrap_button button_type = 'submit' content = '회원목록' %} {% endcomment %}
+    </a>
+  </div>
+{% endblock body %}
