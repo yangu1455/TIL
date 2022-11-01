@@ -20,7 +20,7 @@
       <tr>
         <th scope="col">pk</th>
         <th scope="col">제목</th>
-        <th scope="col">email</th>
+
       </tr>
     </thead>
     <tbody>
@@ -35,6 +35,6 @@
 
   <br>
 
-  <a href="{% url 'articles:new' %}">새 글 쓰기</a>
+  <a class='btn btn-outline-info' href="{% url 'articles:new' %}">새 글 쓰기</a>
 
 {% endblock body %}

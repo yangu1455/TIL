@@ -30,7 +30,7 @@ def create(request):
     #     'content' : content,
     # }
 
-    return redirect('article:index')
+    return redirect('articles:index')
     # return render(request, 'article:index', context)
 
 def edit(request, pk):

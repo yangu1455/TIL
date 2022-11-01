@@ -1,31 +1,31 @@
 {% extends 'base.html' %}
+{% load django_bootstrap5 %}
 
-{% block content %}
-  새 글 쓰기
+{% block body %}
 
-  <a class='btn btn-outline-info' href="">여기가 새글 쓰는 곳</a>
-  {% comment %} <div class="container p-5">
+  <div>
+    <h1 class='mb-3'>새 글 쓰기</h1>
     <form action="{% url 'articles:create' %}">
       <!-- title -->
       <div class="input-group mb-3">
-        <button class="btn btn-outline-light text-white" type="button" id="button-addon1">제목</button>
+        <button class="btn btn-outline-info text-black-50" type="button" id="button-addon1">제목</button>
         <input type="text" class="form-control" placeholder="" aria-label="Example text with button addon" aria-describedby="button-addon1" name="title">
       </div>
 
       <!-- content -->
       <div class="input-group mb-3">
-        <button class="btn btn-outline-light text-white" type="button" id="button-addon1">내용</button>
-        <input type="text" class="form-control" placeholder="" aria-label="Example text with button addon" aria-describedby="button-addon1" name="content">
+        <button class="btn btn-outline-info text-black-50" type="button" id="button-addon1">내용</button>
+        <input type="text" class="form-control" placeholder="" aria-label="Example text with button addon" aria-describedby="button-addon1" style='height:250px;' name="content">
       </div>
 
       <!-- button -->
       <div class="container text-center">
-        <button type="submit" class="btn m-5 px-5 fw-bold">리뷰 쓰기</button>
-        <a type="button" class="btn px-5" href="{% url 'articles:index' %}">
+        <button type="submit" class="btn btn-outline-primary m-5 px-5 fw-bold">리뷰 쓰기</button>
+        <a type="button" class="btn btn-outline-warning px-5" href="{% url 'articles:index' %}">
           <span class="fw-bold">BACK</span></a>
       </div>
     </form>
 
-  </div> {% endcomment %}
+  </div>
 
-{% endblock content %}
+{% endblock body %}
