@@ -1,12 +1,9 @@
-게시판
-
-
 {% extends 'base.html' %}
 {% load django_bootstrap5 %}
 
 {% block body %}
 
-  {% comment %} 회원 목록 테이블 {% endcomment %}
+  {% comment %} 게시판 - 리뷰 목록 {% endcomment %}
 
   {% comment %} 사용자 인증이 되었다면 (user도 되고 request.user도 됨) {% endcomment %}
   {% if request.user.is_authenticated %}
@@ -27,14 +24,17 @@
       </tr>
     </thead>
     <tbody>
-      {% for user in users %}
+      {% for review in reviews %}
         <tr>
-          <th>{{ user.pk }}</th>
-          <td><a href="{% url 'accounts:detail' user.pk %}">{{ user.username }}</a></td>
-          <td>{{ user.email }}</td>
+          <th>{{ review.pk }}</th>
+          <td><a href="{% url 'articles:detail' review.pk %}">{{ review.title }}</a></td>
         </tr>
       {% endfor %}
     </tbody>
   </table>
+
+  <br>
+
+  <a href="{% url 'articles:new' %}">새 글 쓰기</a>
 
 {% endblock body %}

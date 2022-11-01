@@ -1,10 +1,27 @@
-글 세부
+{% extends 'base.html' %}
+{% load django_bootstrap5 %}
 
-제목
-작성자
-내용
+{% block body %}
 
-수정일시
+  <h1>{{ review.title }}</h1>
+  <h2>{{ review.content }}</h2>
 
-수정버튼
-목록으로 돌아가기 버튼
+  <br>
+  <br>
+  작성일 :
+  {{ review.created_at }}
+  <br>
+  수정일 :
+  {{ review.updated_at }}
+
+  <br>
+  <br>
+
+  {% comment %} <a class='btn btn-outline-info' href="{% url 'articles:edit' %}">수정</a> {% endcomment %}
+  {% comment %} <a class='btn btn-outline-danger' href="{% url 'articles:delete' %}">삭제</a> {% endcomment %}
+
+  <br>
+
+  <a class='btn btn-outline-warning' href="{% url 'articles:index' %}">돌아가기</a>
+
+{% endblock body %}

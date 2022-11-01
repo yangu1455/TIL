@@ -1,1 +1,31 @@
-새 글 쓰기
+{% extends 'base.html' %}
+
+{% block content %}
+  새 글 쓰기
+
+  <a class='btn btn-outline-info' href="">여기가 새글 쓰는 곳</a>
+  {% comment %} <div class="container p-5">
+    <form action="{% url 'articles:create' %}">
+      <!-- title -->
+      <div class="input-group mb-3">
+        <button class="btn btn-outline-light text-white" type="button" id="button-addon1">제목</button>
+        <input type="text" class="form-control" placeholder="" aria-label="Example text with button addon" aria-describedby="button-addon1" name="title">
+      </div>
+
+      <!-- content -->
+      <div class="input-group mb-3">
+        <button class="btn btn-outline-light text-white" type="button" id="button-addon1">내용</button>
+        <input type="text" class="form-control" placeholder="" aria-label="Example text with button addon" aria-describedby="button-addon1" name="content">
+      </div>
+
+      <!-- button -->
+      <div class="container text-center">
+        <button type="submit" class="btn m-5 px-5 fw-bold">리뷰 쓰기</button>
+        <a type="button" class="btn px-5" href="{% url 'articles:index' %}">
+          <span class="fw-bold">BACK</span></a>
+      </div>
+    </form>
+
+  </div> {% endcomment %}
+
+{% endblock content %}
