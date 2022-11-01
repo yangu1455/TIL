@@ -34,7 +34,12 @@ def create(request):
     # return render(request, 'article:index', context)
 
 def edit(request, pk):
-    return render(request, 'articles/edit.html')
+    review = Review.objects.get(pk=pk)
+
+    context = {
+        'review' : review,
+    }
+    return render(request, 'articles/edit.html', context)
 
 def update(request, pk):
     pass
