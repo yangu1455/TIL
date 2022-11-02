@@ -17,9 +17,10 @@
   <br>
   <br>
 
-  <a class='btn btn-outline-info' href="{% url 'articles:edit' %}">수정</a>
-  {% comment %} <a class='btn btn-outline-danger' href="{% url 'articles:delete' %}">삭제</a> {% endcomment %}
+  <a class='btn btn-outline-info' href="{% url 'articles:edit' review.pk %}">수정</a>
+  <a class='btn btn-outline-danger' href="{% url 'articles:delete' review.pk %}">삭제</a>
 
+  <br>
   <br>
 
   <a class='btn btn-outline-warning' href="{% url 'articles:index' %}">돌아가기</a>

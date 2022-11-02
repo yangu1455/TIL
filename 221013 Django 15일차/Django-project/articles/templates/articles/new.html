@@ -2,7 +2,6 @@
 {% load django_bootstrap5 %}
 
 {% block body %}
-
   <div>
     <h1 class='mb-3'>새 글 쓰기</h1>
     <form action="{% url 'articles:create' %}">
@@ -21,8 +20,7 @@
       <!-- button -->
       <div class="container text-center">
         <button type="submit" class="btn btn-outline-primary m-5 px-5 fw-bold">리뷰 쓰기</button>
-        <a type="button" class="btn btn-outline-warning px-5" href="{% url 'articles:index' %}">
-          <span class="fw-bold">BACK</span></a>
+        <a type="button" class="btn btn-outline-warning px-5" href="{% url 'articles:index' %}">돌아가기</a>
       </div>
     </form>
 

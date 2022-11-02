@@ -42,7 +42,16 @@ def edit(request, pk):
     return render(request, 'articles/edit.html', context)
 
 def update(request, pk):
-    pass
+    review = Review.objects.get(pk=pk)
+
+    title = request.GET.get('title')
+    content = request.GET.get('content')
+
+    review.title = title
+    review.content = content
+
+    review.save()
+    return redirect('articles:detail', review.pk)
 
 def delete(request, pk):
     Review.objects.get(pk=pk).delete()
