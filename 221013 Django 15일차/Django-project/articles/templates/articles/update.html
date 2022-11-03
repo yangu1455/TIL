@@ -24,8 +24,9 @@
 
       <!-- 수정 버튼 -->
       <div class="container text-center">
-        <button type="submit" class="btn btn-outline-info m-5 px-5 fw-bold">리뷰 수정</button>
-        {% comment %} <a class='btn btn-outline-warning px-5' href="{% url 'articles:detail' review.pk %}">돌아가기</a> {% endcomment %}
+        <button type="submit" class="btn btn-outline-info m-5 px-5">리뷰 수정</button>
+        <a class='btn btn-outline-warning px-5' href="{% url 'articles:index' %}">목록으로</a>
+        {% comment %} <a class='btn btn-outline-warning px-5' href="{% url 'articles:detail' review.pk %}">목록으로</a> - 안되는데 이유를 모르겠음 {% endcomment %}
       </div>
     </form>
   </div>
