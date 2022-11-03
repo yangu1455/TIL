@@ -8,16 +8,19 @@
 
   <br>
   <br>
+
   작성일 :
   {{ review.created_at }}
+
   <br>
+
   수정일 :
   {{ review.updated_at }}
 
   <br>
   <br>
 
-  <a class='btn btn-outline-info' href="{% url 'articles:edit' review.pk %}">수정</a>
+  <a class='btn btn-outline-info' href="{% url 'articles:update' review.pk %}">수정</a>
   <a class='btn btn-outline-danger' href="{% url 'articles:delete' review.pk %}">삭제</a>
 
   <br>

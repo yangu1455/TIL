@@ -4,7 +4,9 @@
 {% block body %}
   <div>
     <h1 class='mb-3'>새 글 쓰기</h1>
-    <form action="{% url 'articles:create' %}">
+    <form action="{% url 'articles:create' %}" method="POST">
+      {% csrf_token %}
+      {% comment %} {% bootstrap_form review_form %} {% endcomment %}
       <!-- title -->
       <div class="input-group mb-3">
         <button class="btn btn-outline-info text-black-50" type="button" id="button-addon1">제목</button>
