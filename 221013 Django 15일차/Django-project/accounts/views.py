@@ -4,14 +4,14 @@ from django.contrib.auth import login as auth_login
 from django.contrib.auth import logout as auth_logout
 from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth import get_user_model
-from .forms import CustomUserCreationForm
+from .forms import CustomUserChangeForm, CustomUserCreationForm
 from django.contrib.auth.decorators import login_required
 
 
 # Create your views here.
 
 # 회원 목록 조회
-
+@login_required
 def index(request):
     users = get_user_model().objects.order_by('pk')
     context = {
@@ -20,7 +20,7 @@ def index(request):
     return render(request, 'accounts/index.html', context)
 
 # 회원 세부 정보 조회
-
+@login_required
 def detail(request, pk):
     user = get_user_model().objects.get(pk=pk)
     context = {
@@ -76,3 +76,17 @@ def login(request):
 def logout(request):
     auth_logout(request)
     return redirect('main')
+
+# 회원 정보 수정
+def update(request):
+    if request.method == 'POST':
+        form = CustomUserChangeForm(request.POST, instance=request.user)
+        if form.is_valid():
+            form.save()
+            return redirect('accounts:detail')
+    else:
+        form = CustomUserChangeForm(instance=request.user)
+    context = {
+        'form' : form,
+    }
+    return render(request, 'accounts/update.html', context)

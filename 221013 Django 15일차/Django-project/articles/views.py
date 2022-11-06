@@ -18,9 +18,9 @@ def detail(request, pk):
     }
     return render(request, 'articles/detail.html', context)
 
+@login_required
 def create(request):
     # if request.user.is_authenticated:
-
     # 유효성 검사
     if request.method == 'POST':
         # DB에 저장하는 로직
@@ -34,9 +34,14 @@ def create(request):
     context = {
         'review_form' : review_form,
     }
-    return render(request, 'articles/new.html', context=context)
+    return render(request, 'articles/new.html', context=context)    
+    # else:
+    #     # 여러가지 방법이 있음
+    #     # return render(....)
+    #     return redirect('accounts:login')
 
 
+@login_required
 def update(request, pk):
     review = Review.objects.get(pk=pk)
     if request.method == "POST":
@@ -48,7 +53,7 @@ def update(request, pk):
             review_form.save()
             # 유효성 검사 통과하면 상세보기 페이지로
             return redirect("articles:detail", review.pk)
-
+            
     # 유효성검사 통과하지 않으면 => context부터해서 오류메시지 담긴 article_form을 랜더링
     else:
         # GET : Form을 제공
@@ -59,7 +64,7 @@ def update(request, pk):
     }
     return render(request, "articles/update.html", context)
 
-
+@login_required
 def delete(request, pk):
     Review.objects.get(pk=pk).delete()
     return redirect('articles:index')
