@@ -2,10 +2,11 @@ from multiprocessing import context
 from django.shortcuts import render, redirect
 from django.contrib.auth import login as auth_login
 from django.contrib.auth import logout as auth_logout
-from django.contrib.auth.forms import AuthenticationForm
+from django.contrib.auth.forms import AuthenticationForm, PasswordChangeForm
 from django.contrib.auth import get_user_model
 from .forms import CustomUserChangeForm, CustomUserCreationForm
 from django.contrib.auth.decorators import login_required
+from django.contrib.auth import update_session_auth_hash
 
 
 # Create your views here.
@@ -84,10 +85,26 @@ def update(request):
         form = CustomUserChangeForm(request.POST, instance=request.user)
         if form.is_valid():
             form.save()
-            return redirect('accounts:detail', request.user.pk)
+            # return redirect('accounts:detail', request.user.pk)
+            return redirect('accounts:index')
     else:
         form = CustomUserChangeForm(instance=request.user)
     context = {
         'form' : form,
     }
     return render(request, 'accounts/update.html', context)
+
+def change_password(request):
+    if request.method == 'POST':
+        form = PasswordChangeForm(request.user, request.POST)
+        # form = PasswordChangeForm(user=request.user, data=request.POST)
+        if form.is_valid():
+            form.save()
+            update_session_auth_hash(request, form.user)
+            return redirect('accounts:detail', request.user.pk)
+    else:
+        form = PasswordChangeForm(request.user)
+    context = {
+        'form' : form,
+    }
+    return render(request, 'accounts/change_password.html', context)

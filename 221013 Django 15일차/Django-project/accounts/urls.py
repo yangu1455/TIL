@@ -16,4 +16,6 @@ urlpatterns = [
     path('logout/', views.logout, name='logout'),
     # 회원 정보 수정
     path('update/', views.update, name='update'),
+    # 비밀번호 변경
+    path('password/', views.change_password, name='change_password'),
 ]
