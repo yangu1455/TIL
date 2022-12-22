@@ -88,7 +88,24 @@ Opacity, hex + 00~FF
 
 ---
 
+em, rem
+
+---
+
 <br>
 
 Transition ~시간에 걸쳐서 변화를 일으키게  
 속성을 정할수도 이따
+
+```css
+transition: 애니메이션 효과를 줄 특성 이름 지속 시간(s, ms 단위) 타이밍 기능;
+```
+
+timing-function 더 많은 효과는 여기서 👉🏻 [https://easings.net/](https://easings.net/)
+
+---
+
+transform 속성  
+`rotate` `scale` `translate` `skew`  
+`transform-origin`  
+`cursor`
