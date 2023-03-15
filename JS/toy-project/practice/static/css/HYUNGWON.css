@@ -1,9 +1,15 @@
+@charset "UTF-8";
 /* 
 영어 폰트
 font-family: 'Dancing Script', cursive;
 한국어 폰트
 font-family: 'Gugi', cursive; 
 */
+body {
+  background-image: url(../HYUNGWON\ ⭐️/images/풀배경_1.jpeg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
 
 .c-pink {
   color: pink;
@@ -14,4 +20,4 @@ font-family: 'Gugi', cursive;
 .main_photo_img {
   width: 120px;
   height: 120px;
-}
+}/*# sourceMappingURL=HYUNGWON.css.map */
