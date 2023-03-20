@@ -2,8 +2,42 @@
 영어 폰트
 font-family: 'Dancing Script', cursive;
 한국어 폰트
-font-family: 'Gugi', cursive; 
 */
+
+// 폰트 감자꽃
+@import url('https://fonts.googleapis.com/css2?family=Gamja+Flower&display=swap');
+
+// 폰트 둘기마요 고딕
+@font-face {
+  font-family: 'Dovemayo_gothic';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2302@1.1/Dovemayo_gothic.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+
+// 폰트 강원교육모두체
+@font-face {
+  font-family: 'GangwonEdu_OTFBoldA';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2201-2@1.0/GangwonEdu_OTFBoldA.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+// 폰트 조선 100년체
+@font-face {
+  font-family: 'ChosunCentennial';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2206-02@1.0/ChosunCentennial.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+
+// 폰트 태백 은하수체
+@font-face {
+  font-family: 'TAEBAEKmilkyway';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2302@1.0/TAEBAEKmilkyway.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
 
 body {
   background-image: url(../HYUNGWON\ ⭐️/images/풀배경_1.jpeg); 
@@ -20,4 +54,14 @@ body {
 .main_photo_img {
   width: 120px;
   height: 120px;
+}
+
+.green_box {
+  border: 2px solid green;
+  border-radius: 30px;
+  background-color: white;
+}
+
+.moving_img_size {
+  height: 50px;
 }
