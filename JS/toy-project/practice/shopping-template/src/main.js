@@ -30,6 +30,30 @@ function createHTMLString(item) {
   `;
 }
 
+function onButtonClick(event, items) {
+  const dataset = event.target.dataset;
+  const key = dataset.key;
+  const value = dataset.value;
+
+  if (key == null || value == null) {
+    return;
+  }
+
+  const filtered = items.filter(item => item[key] === value);
+  console.log(filtered)
+  // filter를 이용해서 조건에 해당하는 값들만 불러오기
+  displayItems(items.filter(item => item[key] === value))
+}
+
+function setEventListeners(items) {
+  const logo = document.querySelector('.logo');
+  const buttons = document.querySelector('.buttons');
+  // 로고를 클릭하면 전체 품목을 보여주면 되니까 미리 만들어둔 displayItems를 이용한다.
+  logo.addEventListener('click', () => displayItems(items));
+  buttons.addEventListener('click', event => onButtonClick(event, items));
+}
+
+
 // main
 // data.json의 데이터를 읽어와서 데이터를 전달해주는 역할
 loadItems()
@@ -37,6 +61,6 @@ loadItems()
     // 보여주고
     displayItems(items);
     // 필터링
-    // setEventListeners(items)
+    setEventListeners(items)
   })
   .catch(console.log)
