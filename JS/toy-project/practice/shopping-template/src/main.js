@@ -39,11 +39,25 @@ function onButtonClick(event, items) {
     return;
   }
 
-  const filtered = items.filter(item => item[key] === value);
-  console.log(filtered)
+  // const filtered = items.filter(item => item[key] === value);
+  // console.log(filtered)
   // filter를 이용해서 조건에 해당하는 값들만 불러오기
   displayItems(items.filter(item => item[key] === value))
+
+  // updateItems(items, key, value); 아래코드랑 짝꿍
 }
+
+// visible 이용한 ~
+// Make the items matching {key: value} invisible.
+// function updateItems(items, key, value) { 
+//   items.forEach(item => {
+//     if (item.dataset[key] === value) {
+//       item.classList.remove('invisible');
+//     } else {
+//       item.classList.add('invisible');
+//     }
+//   });
+// }
 
 function setEventListeners(items) {
   const logo = document.querySelector('.logo');
@@ -64,3 +78,7 @@ loadItems()
     setEventListeners(items)
   })
   .catch(console.log)
+
+
+// 위와 같은 코드로 짜면 컨테이너를 매번 새롭게 업데이트 해야하는 문제가 생긴다.
+// 그래서 visible 속성을 이용해서 보였다가 안보였다가로 바꾸는게 훨씬 낫다.
