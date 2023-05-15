@@ -75,15 +75,51 @@ function isPositiveP(number){
   // 그니까 실행해!! 라는 말을 안해도 냅다 수행이 되어버리는 것임!
   const asyncTask = new Promise(executor);
   return asyncTask; // 그럼 이제 상수 리턴만 해줘도 isPositiveP 함수의 반환값이 Promise로 바뀌게 됨.
+  
+  // 어떤 함수가 promise를 반환한다는 것은
+  // 이 함수는 비동기 작업을 하고 그 작업의 결과를 promise 객체로 반환받아서 사용할 수 있는 함수라고 보면 된다.!
 }
 
-isPositiveP(101);
+const res = isPositiveP(101);
+// res라는 상수가 반환받은 promise 객체를 이용해서 
+// 비동기 처리에 대한 resolve거나 reject의 결과값을 아무데서나 사용할 수 있게 된다.
+
+res
+  // promise 객체의 메소드인 then, catch
+  .then((res)=>{
+    console.log("작업 성공 : ", res);
+  })
+  .catch((err)=>{
+    console.log("작업 실패 : ", err);
+  });
 ```
 
-
 <br>
 <br>
 
+이제 진짜 탈출해보실까..?
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
 
 
 ```javascript
