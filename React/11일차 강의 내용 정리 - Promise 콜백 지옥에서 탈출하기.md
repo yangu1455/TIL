@@ -100,30 +100,62 @@ res
 이제 진짜 탈출해보실까..?
 
 <br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-
 
 ```javascript
+function taskA(a, b, cb) {
+  setTimeout(()=>{
+    const res = a+b;
+    cb(res);
+  }, 3000);
+}
+
+function taskB(a, cb) {
+  setTimeout(()=>{
+    const res = a * 2;
+    cb(res);
+  }, 1000);
+}
+
+function taskC(a, cb) {
+  setTimeout(()=>{
+    const res = a * -1;
+    cb(res);
+  }, 2000);
+}
+
+taskA(3, 4, (a_res)=>{
+  console.log("task A : ", a_res);
+  taskB(a_res, (b_res)=>{
+    console.log("task B : ", b_res);
+    taskC(b_res, (c_res)=>{
+      console.log("task C : ", c_res);
+    })
+  })
+})
 ```
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+
+
 
 ```javascript
 ```
