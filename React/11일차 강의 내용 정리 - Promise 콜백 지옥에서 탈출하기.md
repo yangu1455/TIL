@@ -103,6 +103,8 @@ res
 
 ```javascript
 function taskA(a, b, cb) {
+
+  return new Promise((resolve, reject)=>)
   setTimeout(()=>{
     const res = a+b;
     cb(res);
@@ -123,15 +125,15 @@ function taskC(a, cb) {
   }, 2000);
 }
 
-taskA(3, 4, (a_res)=>{
-  console.log("task A : ", a_res);
-  taskB(a_res, (b_res)=>{
-    console.log("task B : ", b_res);
-    taskC(b_res, (c_res)=>{
-      console.log("task C : ", c_res);
-    })
-  })
-})
+// taskA(3, 4, (a_res)=>{
+//   console.log("task A : ", a_res);
+//   taskB(a_res, (b_res)=>{
+//     console.log("task B : ", b_res);
+//     taskC(b_res, (c_res)=>{
+//       console.log("task C : ", c_res);
+//     })
+//   })
+// })
 ```
 
 <br>
