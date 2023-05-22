@@ -102,29 +102,44 @@ res
 <br>
 
 ```javascript
-function taskA(a, b, cb) {
+function taskA(a, b) {
 
-  return new Promise((resolve, reject)=>)
-  setTimeout(()=>{
-    const res = a+b;
-    cb(res);
-  }, 3000);
+  // const executorA = (resolve, reject) => {
+  //   set~~~ 
+  // }
+  // 이게 아래 코드와 같은~
+
+  return new Promise((resolve, reject)=>{
+    setTimeout(()=>{
+      const res = a+b;
+      resolve(res);
+    }, 3000);
+  });
 }
 
-function taskB(a, cb) {
-  setTimeout(()=>{
-    const res = a * 2;
-    cb(res);
-  }, 1000);
+function taskB(a) {
+  return new Promise((resolve, reject) => {
+    setTimeout(()=>{
+      const res = a * 2;
+      resolve(res);
+    }, 1000);
+  });
 }
 
-function taskC(a, cb) {
-  setTimeout(()=>{
-    const res = a * -1;
-    cb(res);
-  }, 2000);
+function taskC(a) {
+  return new Promise((resolve, reject) => {
+    setTimeout(()=>{
+      const res = a * -1;
+      resolve(res);
+    }, 2000);
+  });
 }
 
+// promise를 반환하는 함수를 만든 이유!
+// 어떤 함수가 promise를 반환한다 
+// == 비동기적으로 동작한다. + promise 객체를 이용해서 비동기 처리의 결과 값을, 위에서 만들었던 것처럼 then, catch로 이용할 수 있게 만들겠다!
+
+// 콜백
 // taskA(3, 4, (a_res)=>{
 //   console.log("task A : ", a_res);
 //   taskB(a_res, (b_res)=>{
@@ -134,34 +149,53 @@ function taskC(a, cb) {
 //     })
 //   })
 // })
-```
 
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
+// 를
+// taskA(5, 1).then((a_res)=>{
+//   console.log("A RESULT : ", a_res);
+//   taskB(a_res).then((b_res)=>{
+//     console.log("B RESULT : ", b_res);
+//     taskC(b_res).then((c_res)=>{
+//       console.log("task C : ", c_res);
+//     })
+//   })
+// })
+// 콜백식?
+// 로 바꿀 수 있긴한데 이것은 promise 객체와 then을 사용하는 방법이 잘못된!(?)
 
 
+taskA(5, 1).then((a_res)=>{
+  console.log("A RESULT : ", a_res);
+  return taskB(a_res); // 결과값(B Promise) 반환
+}).then((b_res)=>{
+  console.log("B RESULT : ", b_res);
+  return taskC(b_res); // 반환(C Promise)
+}).then((c_res)=>{
+  console.log("C RESULT : ", c_res);
+  // 더 이상 할게 없으니까 반환할 것 없음
+})
+
+// 위처럼 then 메서드를 계속 이어붙이는 것을 then 체이닝이라고 한다.
 
 
-```javascript
-```
+const bPromiseResult = taskA(5, 1).then((a_res)=>{
+  console.log("A RESULT : ", a_res);
+  return taskB(a_res);
+}); // 비동기 처리 코드
 
-```javascript
+console.log("kdkdkdkdk");
+console.log("kdkdkdkdk");
+console.log("kdkdkdkdk");
+// 이런식으로 분리해서 중간에 다른 작업을 끼워넣는 것이 가능하다.
+// 콜백식이 아니어서 promise를 써서? 좋은 이유
+
+bPromiseResult  // 결과 호출하는 코드
+  .then((b_res)=>{
+    console.log("B RESULT : ", b_res);
+    return taskC(b_res);
+  }).then((c_res)=>{
+    console.log("C RESULT : ", c_res);
+  });
+// 또, 비동기 처리 코드와 결과 호출 코드를 분리할 수 있어서 가독성 b, 깔끔하게 코드를 짤 수 있다!
+
 ```
